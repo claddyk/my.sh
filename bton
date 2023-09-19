@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# start the Bluetooth service
+sudo systemctl start bluetooth
+
+# Run bluetoothctl
+bluetoothctl <<EOF
+connect 28:6F:40:BA:DD:02
+sleep 2
+exit
+EOF

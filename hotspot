@@ -1,0 +1,19 @@
+#!/bin/sh
+# List rfkill status
+rfkill list
+
+# Wait for 1 seconds
+sleep 1
+
+sudo rfkill unblock 0
+
+# Wait for 2 seconds
+sleep 1
+
+sudo rfkill unblock 3
+sleep 1
+
+# Start the hotspot using create_ap
+sudo create_ap --no-virt wlp0s20f3 enp7s0 MyAccessPoint MyPassPhrase
+
+exit
